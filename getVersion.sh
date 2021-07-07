@@ -18,9 +18,9 @@ fi
 # get commit logs and determine home to bump the version
 # supports #major, #minor, #patch (anything else will be 'patch')
 case "$log" in
-    *#major* ) newTag=$(semver $tag -i major);;
-    *#minor* ) newTag=$(semver $tag -i minor);;
-    * ) newTag=$(semver $tag -i patch);;
+    *#major* ) newTag=v$(semver $tag -i major);;
+    *#minor* ) newTag=v$(semver $tag -i minor);;
+    * ) newTag=v$(semver $tag -i patch);;
 esac
 
 export GIT_VERSION=${newTag}
