@@ -23,7 +23,8 @@ fi
 case "$log" in
     *\[BREAKING]* ) newTag=$(semver $tag -i major);;
     *\[FEATURE]* ) newTag=$(semver $tag -i minor);;
-    *\[FIX]* ) newTag=$(semver $tag -i patch);;
+    #*\[FIX]* ) newTag=$(semver $tag -i patch);;
+    * ) newTag=$(semver $tag -i patch);;
 esac
 
 # export GIT variables for later use
