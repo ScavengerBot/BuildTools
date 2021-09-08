@@ -19,12 +19,12 @@ else
 fi
 
 # get commit logs and determine home to bump the version
-# supports #major, #minor, #patch (anything else will be 'patch')
+# supports BREAKING, FEATURE, FIX (anything else will be 'patch')
 case "$log" in
     *\[BREAKING]* ) newTag=$(semver $tag -i major);;
     *\[FEATURE]* ) newTag=$(semver $tag -i minor);;
     #*\[FIX]* ) newTag=$(semver $tag -i patch);;
-    * ) newTag=$(semver $tag -i patch);;
+    *) newTag=$(semver $tag -i patch);;
 esac
 
 # export GIT variables for later use
