@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$GIT_TAG" -a "$TRAVIS_BRANCH" = "dev" ]; then
+if [ "$TRAVIS_BRANCH" = "dev" ]; then
   endpoint=${TRAVIS_REPO_SLUG//ScavengerBot\/scavenger-/}
 fi
   
