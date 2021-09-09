@@ -5,5 +5,5 @@ if [ "$TRAVIS_BRANCH" = "dev" ]; then
 fi
   
 if [ $endpoint ]; then
-  curl -X PUT -H "Content-Type: application/json" -d {$endpoint: $GIT_VERSION} https://api-dev.scavengerbot.io/v1/admin/services
+  curl -X PUT -H "Content-Type: application/json" -H "Authorization: Bearer $AUTH_TOKEN" -d {$endpoint: $GIT_VERSION} https://api-dev.scavengerbot.io/v1/admin/services
 fi
